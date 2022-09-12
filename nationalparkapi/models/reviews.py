@@ -8,4 +8,4 @@ class Review(models.Model):
     """date model for park review"""
     park= models.ForeignKey(Park, on_delete=models.CASCADE, related_name="reviews")
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="reviews")
-    content = models.CharField
+    content = models.CharField(max_length=1000)
