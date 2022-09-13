@@ -1,3 +1,4 @@
+from dataclasses import fields
 from rest_framework import serializers
 
 from nationalparkapi.models.parks import Park
@@ -15,8 +16,9 @@ class ParkSerializer(serializers.ModelSerializer):
 class DetailedParkSerializer(serializers.ModelSerializer):
     """serializer for detailed park view including images and address and reviews"""
     images = ImageSerializer(many=True)
-    address = AddressSerializer()
+    addresses = AddressSerializer(many = True)
     reviews = ReviewSerializer(many = True)
     class Meta:
         model = Park
-        fields = ('id', 'images', 'address', 'reviews', 'url', 'full_name', 'description', 'designation')  
+        fields = ('id', 'images', 'addresses', 'reviews', 'url', 'full_name', 'description', 'designation')  
+

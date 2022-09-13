@@ -1,5 +1,4 @@
-from operator import mod
-from tkinter import Pack
+
 from django.db import models
 
 from nationalparkapi.models.parks import Park

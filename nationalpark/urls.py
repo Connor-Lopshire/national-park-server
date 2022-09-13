@@ -21,11 +21,14 @@ from rest_framework import routers
 from nationalparkapi.views import register_user, login_user
 from nationalparkapi.views.data_collection import DataCollectionView
 from nationalparkapi.views.parks import ParkView
+from nationalparkapi.views.review import ReviewView
 
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'parks_data',DataCollectionView , 'park_data')
 router.register(r'parks',ParkView, 'park')
+router.register(r'reviews',ReviewView, 'review')
+
 
 
 urlpatterns = [
