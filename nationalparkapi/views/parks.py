@@ -14,6 +14,8 @@ class ParkView(ViewSet):
         """list of all parks"""
 
         parks = Park.objects.all()
+        for park in parks:
+            park.visited = request.auth.user
         serializer = ParkSerializer(parks, many=True)
         return Response(serializer.data)
     def retrieve(self, request, pk):
@@ -24,6 +26,8 @@ class ParkView(ViewSet):
     @action(methods=['get'], detail=False)
     def bucket_list_parks(self, request):
         parks = request.auth.user.bucket_list_parks.all()
+        for park in parks:
+            park.visited = request.auth.user
         serializer = ParkSerializer(parks, many=True)
         return Response(serializer.data)
     @action(methods=['post'], detail=True)
@@ -34,6 +38,8 @@ class ParkView(ViewSet):
     @action(methods=['get'], detail=False)
     def visited_parks(self, request):
         parks = request.auth.user.visited_parks.all()
+        for park in parks:
+            park.visited = request.auth.user
         serializer = VisitedParkSerializer(parks, many=True)
         return Response(serializer.data, status= status.HTTP_200_OK)
     @action(methods=['post'], detail=True)

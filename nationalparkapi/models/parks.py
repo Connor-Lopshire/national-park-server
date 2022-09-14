@@ -1,3 +1,4 @@
+from operator import truediv
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -11,3 +12,17 @@ class Park(models.Model):
     state = models.CharField(max_length=150)
     designation = models.CharField(max_length=150)
     bucket_list = models.ManyToManyField(User, related_name="bucket_list_parks")
+    @property
+    def visited(self):
+        return self.__visited
+    @visited.setter
+    def visited(self, value):
+        print(value)
+        visit = value.visited_parks.all().filter(park_id=self.id)
+        if len(visit) != 0 : 
+            self.__visited = True
+        else :
+            self.__visited = False
+
+            # if self in value.bucket_list_parks.all():
+                # self.in bucket = true 

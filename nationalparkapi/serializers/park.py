@@ -11,7 +11,7 @@ class ParkSerializer(serializers.ModelSerializer):
     images = ImageSerializer(many=True)
     class Meta:
         model = Park
-        fields = ('id', 'images', 'full_name', 'state')
+        fields = ('id', 'images', 'full_name', 'state', 'visited')
 
 class DetailedParkSerializer(serializers.ModelSerializer):
     """serializer for detailed park view including images and address and reviews"""
