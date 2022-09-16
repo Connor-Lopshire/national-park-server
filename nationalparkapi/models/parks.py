@@ -17,7 +17,6 @@ class Park(models.Model):
         return self.__visited
     @visited.setter
     def visited(self, value):
-        print(value)
         visit = value.visited_parks.all().filter(park_id=self.id)
         if len(visit) != 0 : 
             self.__visited = True
@@ -25,4 +24,4 @@ class Park(models.Model):
             self.__visited = False
 
             # if self in value.bucket_list_parks.all():
-                # self.in bucket = true 
+                # self.in bucket = true

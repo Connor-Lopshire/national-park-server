@@ -21,7 +21,13 @@ class ParkView(ViewSet):
     def retrieve(self, request, pk):
         """method to get single park with reviews and more details"""
         park = Park.objects.get(pk=pk)
+        park.visited = request.auth.user
+       
+
+
         serializer = DetailedParkSerializer(park)
+        for review in serializer.data['reviews']:
+            review['author'] = True if review['user']['id'] == request.auth.user.id else False
         return Response(serializer.data, status= status.HTTP_200_OK)
     @action(methods=['get'], detail=False)
     def bucket_list_parks(self, request):

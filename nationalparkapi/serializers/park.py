@@ -20,5 +20,5 @@ class DetailedParkSerializer(serializers.ModelSerializer):
     reviews = ReviewSerializer(many = True)
     class Meta:
         model = Park
-        fields = ('id', 'images', 'addresses', 'reviews', 'url', 'full_name', 'description', 'designation')  
+        fields = ('id', 'images', 'addresses', 'reviews', 'url', 'full_name', 'description', 'designation', 'visited')  
 

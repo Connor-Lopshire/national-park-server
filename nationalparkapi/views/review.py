@@ -24,3 +24,9 @@ class ReviewView(ViewSet):
     def delete_review(self, request, pk):
         Review.objects.get(pk=pk).delete()
         return Response(None, status=status.HTTP_204_NO_CONTENT)
+    @action(methods=['put'], detail=True)
+    def edit_review(self, request, pk):
+        review = Review.objects.get(pk=pk)
+        review.content = request.data['content']
+        review.save()
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
