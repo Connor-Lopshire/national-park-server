@@ -16,18 +16,20 @@ class ParkView(ViewSet):
         parks = Park.objects.all()
         for park in parks:
             park.visited = request.auth.user
+            park.in_bucket = request.auth.user
         serializer = ParkSerializer(parks, many=True)
+        
         return Response(serializer.data)
     def retrieve(self, request, pk):
         """method to get single park with reviews and more details"""
         park = Park.objects.get(pk=pk)
         park.visited = request.auth.user
-       
-
+        park.in_bucket = request.auth.user
 
         serializer = DetailedParkSerializer(park)
         for review in serializer.data['reviews']:
             review['author'] = True if review['user']['id'] == request.auth.user.id else False
+        
         return Response(serializer.data, status= status.HTTP_200_OK)
     @action(methods=['get'], detail=False)
     def bucket_list_parks(self, request):
@@ -57,3 +59,7 @@ class ParkView(ViewSet):
             date = request.data['date']
         )
         return Response(None, status= status.HTTP_201_CREATED)
+    @action(methods=['delete'], detail=True)
+    def remove_bucket_list(self, request, pk):
+        request.auth.user.bucket_list_parks.get(pk=pk).delete()
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
