@@ -1,4 +1,3 @@
-from operator import truediv
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -23,5 +22,12 @@ class Park(models.Model):
         else :
             self.__visited = False
 
-            # if self in value.bucket_list_parks.all():
-                # self.in bucket = true
+            
+    @property
+    def in_bucket(self):
+        return self.__in_bucket
+    @in_bucket.setter
+    def in_bucket(self, value):
+        if self in value.bucket_list_parks.all():
+            self.__in_bucket = True
+        else : self.__in_bucket = False
