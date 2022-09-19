@@ -6,6 +6,7 @@ from nationalparkapi.models.parks import Park
 from nationalparkapi.models.visited_parks import VisitedPark
 from nationalparkapi.serializers.park import DetailedParkSerializer, ParkSerializer
 from rest_framework.decorators import action
+from nationalparkapi.serializers.users import UserSerializer
 
 from nationalparkapi.serializers.visited_park import VisitedParkSerializer
 
@@ -46,9 +47,10 @@ class ParkView(ViewSet):
     @action(methods=['get'], detail=False)
     def visited_parks(self, request):
         parks = request.auth.user.visited_parks.all()
-        for park in parks:
-            park.visited = request.auth.user
         serializer = VisitedParkSerializer(parks, many=True)
+        user_serializer = UserSerializer(request.auth.user)
+        for park in serializer.data:
+            park['park']['visited'] = True if park['user'] == user_serializer.data else False
         return Response(serializer.data, status= status.HTTP_200_OK)
     @action(methods=['post'], detail=True)
     def add_park_visit(self, request, pk):
@@ -61,5 +63,5 @@ class ParkView(ViewSet):
         return Response(None, status= status.HTTP_201_CREATED)
     @action(methods=['delete'], detail=True)
     def remove_bucket_list(self, request, pk):
-        request.auth.user.bucket_list_parks.get(pk=pk).delete()
+        request.auth.user.bucket_list_parks.remove(pk)
         return Response(None, status=status.HTTP_204_NO_CONTENT)
