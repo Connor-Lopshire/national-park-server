@@ -65,3 +65,8 @@ class ParkView(ViewSet):
     def remove_bucket_list(self, request, pk):
         request.auth.user.bucket_list_parks.remove(pk)
         return Response(None, status=status.HTTP_204_NO_CONTENT)
+    @action(methods=['delete'], detail=True)
+    def remove_visit(self, request, pk):
+        visited_park = VisitedPark.objects.get(pk=pk)
+        visited_park.delete()
+        return Response(None, status=status.HTTP_204_NO_CONTENT)
