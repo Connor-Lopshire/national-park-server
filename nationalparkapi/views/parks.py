@@ -7,20 +7,25 @@ from nationalparkapi.models.visited_parks import VisitedPark
 from nationalparkapi.serializers.park import DetailedParkSerializer, ParkSerializer
 from rest_framework.decorators import action
 from nationalparkapi.serializers.users import UserSerializer
-
+from rest_framework.pagination import LimitOffsetPagination
 from nationalparkapi.serializers.visited_park import VisitedParkSerializer
 
 class ParkView(ViewSet):
+    pagination_class = LimitOffsetPagination
     def list(self, request):
         """list of all parks"""
 
         parks = Park.objects.all()
+        
         for park in parks:
             park.visited = request.auth.user
             park.in_bucket = request.auth.user
-        serializer = ParkSerializer(parks, many=True)
-        
-        return Response(serializer.data)
+        pagination = LimitOffsetPagination()
+        parks_pag = pagination.paginate_queryset(parks, request)
+        serializer = ParkSerializer(parks_pag, many=True)
+        return pagination.get_paginated_response(serializer.data)
+    
+
     def retrieve(self, request, pk):
         """method to get single park with reviews and more details"""
         park = Park.objects.get(pk=pk)
