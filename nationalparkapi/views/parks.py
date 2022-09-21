@@ -4,9 +4,11 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
 from nationalparkapi.models.parks import Park
+from nationalparkapi.models.states import State
 from nationalparkapi.models.visited_parks import VisitedPark
 from nationalparkapi.serializers.park import DetailedParkSerializer, ParkSerializer
 from rest_framework.decorators import action
+from nationalparkapi.serializers.state import StateSerializer
 from nationalparkapi.serializers.users import UserSerializer
 from rest_framework.pagination import LimitOffsetPagination
 from nationalparkapi.serializers.visited_park import VisitedParkSerializer
@@ -81,3 +83,9 @@ class ParkView(ViewSet):
         visited_park = VisitedPark.objects.get(pk=pk)
         visited_park.delete()
         return Response(None, status=status.HTTP_204_NO_CONTENT)
+    @action(methods=['get'], detail=False)
+    def get_states(self, request):
+        states = State.objects.all()
+        serializer = StateSerializer(states,many=True)
+
+        return Response(serializer.data)

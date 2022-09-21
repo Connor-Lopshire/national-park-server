@@ -1,0 +1,302 @@
+[{
+    "model": "nationalparkapi.state",
+    "pk": 1,
+    "fields": {
+        "state_code": "AL"
+   }
+},
+{"model": "nationalparkapi.state",
+"pk": 2,
+"fields": {
+    "state_code": "AK"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 3,
+"fields": {
+    "state_code": "AZ"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 4,
+"fields": {
+    "state_code": "AR"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 5,
+"fields": {
+    "state_code": "CA"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 6,
+"fields": {
+    "state_code": "CO"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 7,
+"fields": {
+    "state_code": "CT"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 8,
+"fields": {
+    "state_code": "DE"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 9,
+"fields": {
+    "state_code": "FL"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 10,
+"fields": {
+    "state_code": "GA"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 11,
+"fields": {
+    "state_code": "HI"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 12,
+"fields": {
+    "state_code": "ID"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 13,
+"fields": {
+    "state_code": "IL"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 14,
+"fields": {
+    "state_code": "IN"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 15,
+"fields": {
+    "state_code": "IA"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 16,
+"fields": {
+    "state_code": "KS"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 17,
+"fields": {
+    "state_code": "KY"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 18,
+"fields": {
+    "state_code": "LA"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 19,
+"fields": {
+    "state_code": "ME"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 20,
+"fields": {
+    "state_code": "MD"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 21,
+"fields": {
+    "state_code": "MA"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 22,
+"fields": {
+    "state_code": "MI"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 23,
+"fields": {
+    "state_code": "MN"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 24,
+"fields": {
+    "state_code": "MS"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 25,
+"fields": {
+    "state_code": "MO"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 26,
+"fields": {
+    "state_code": "MT"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 27,
+"fields": {
+    "state_code": "NE"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 28,
+"fields": {
+    "state_code": "NV"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 29,
+"fields": {
+    "state_code": "NH"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 30,
+"fields": {
+    "state_code": "NJ"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 31,
+"fields": {
+    "state_code": "NM"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 32,
+"fields": {
+    "state_code": "NY"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 33,
+"fields": {
+    "state_code": "NC"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 34,
+"fields": {
+    "state_code": "ND"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 35,
+"fields": {
+    "state_code": "OH"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 36,
+"fields": {
+    "state_code": "OK"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 37,
+"fields": {
+    "state_code": "OR"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 38,
+"fields": {
+    "state_code": "PA"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 39,
+"fields": {
+    "state_code": "RI"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 40,
+"fields": {
+    "state_code": "SC"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 41,
+"fields": {
+    "state_code": "SD"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 42,
+"fields": {
+    "state_code": "TN"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 43,
+"fields": {
+    "state_code": "TX"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 44,
+"fields": {
+    "state_code": "UT"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 45,
+"fields": {
+    "state_code": "VT"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 46,
+"fields": {
+    "state_code": "VA"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 47,
+"fields": {
+    "state_code": "WA"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 48,
+"fields": {
+    "state_code": "WV"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 49,
+"fields": {
+    "state_code": "WI"
+}
+},
+{"model": "nationalparkapi.state",
+"pk": 50,
+"fields": {
+    "state_code": "WY"
+}
+}
+]
