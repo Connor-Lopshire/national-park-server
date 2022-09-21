@@ -16,8 +16,7 @@ class DataCollectionView(ViewSet):
     @action(methods=['get'], detail=False) 
     def get_national_parks(self, request):
         Park.objects.all().delete()
-        Address.objects.all().delete()
-        Image.objects.all().delete()
+        
 
         url = f'https://developer.nps.gov/api/v1/parks?limit=468&api_key={os.environ.get("MY_API_KEY")}'
         response = requests.get(url).json()

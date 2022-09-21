@@ -1,4 +1,5 @@
 
+from re import search
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
@@ -16,7 +17,12 @@ class ParkView(ViewSet):
         """list of all parks"""
 
         parks = Park.objects.all()
-        
+        search_term = request.query_params.get('q', None)
+        state_query = request.query_params.get('state', None)
+        if search_term != '' and search_term is not None:
+            parks = parks.filter(full_name__icontains = search_term).distinct()
+        if state_query != '' and state_query is not None:
+            parks =parks.filter(state__icontains = state_query).distinct()
         for park in parks:
             park.visited = request.auth.user
             park.in_bucket = request.auth.user
