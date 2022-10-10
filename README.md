@@ -2,5 +2,5 @@
 For a detailed read.me with application over view and gifs visit the front end repository https://github.com/Connor-Lopshire/national_park_log
 ### Installation Instructios
 - in terminal run git clone `git@github.com:Connor-Lopshire/national-park-server.git`
-- `run pipenv` shell to initialize virtual enviorment needed to run the app
+- `run pipenv shell` to initialize virtual enviorment needed to run the app
 - run `python3 manage.py runserver` to start the server 
